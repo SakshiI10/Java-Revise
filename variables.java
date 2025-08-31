@@ -15,7 +15,7 @@ public class variables {
         String message = "Hello, world!";
         System.out.println("Message = " + message);
         
-        // To represent constant values, we use the final keyword. Syntax: final dataType CONSTANT_NAME = value;
+        // To represent constant values, we use the final keyword. Syntax: final dataType CONSTANT_NAME = value; 
         final float PI = 3.14f;
         System.out.println("Value of Pi = " + PI);
     }
