@@ -2,7 +2,7 @@
 // It is used because it allows us to provide input at runtime without modifying the whole program.
 // args[] = input from outside the program (command line).
 
-class args {
+class a8_args {
     public static void main(String[] args)
     {
         // Checking if length of args array is greater than 0

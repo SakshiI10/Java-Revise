@@ -8,7 +8,7 @@
 // a. Belong to an instance of a class (an object).
 // b. You need to create an object of the class to call the method.
 
-public class methodsTypes {
+public class a7_methodsTypes {
     int number = 10;  // Optional: assign a value to number
 
     public void display() {
@@ -32,17 +32,18 @@ public class methodsTypes {
     // 5. Constructor Methods:
     // a. Special methods called when an object is created.
     // b. Have the same name as the class and no return type.
-    public methodsTypes() {
+    public a7_methodsTypes() {
         System.out.println("Constructor called");
     }
 
     public static void main(String[] args) {
         // Instance Method Call
-        methodsTypes obj = new methodsTypes();  // Create object
+        
+        a7_methodsTypes obj = new a7_methodsTypes();  // Create object
         obj.display();  // Call 
 
         // Static Method Example
-        methodsTypes.show();  // Call static method
+        a7_methodsTypes.show();  // Call static method
 
         // Abstract Method Example
         Animal dog = new Dog();  // Create object using abstract class reference
@@ -52,7 +53,7 @@ public class methodsTypes {
         obj.finalMethod();  // Calling final method
 
         // Constructor Method Example
-        methodsTypes constructorcall = new methodsTypes();  // Calls constructor
+        a7_methodsTypes constructorcall = new a7_methodsTypes();  // Calls constructor
         constructorcall.display();  // Display number
     }
 }

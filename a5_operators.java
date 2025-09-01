@@ -1,4 +1,4 @@
-public class operators {
+public class a5_operators {
     public static void main(String[] args) {
         int a = 10;
         int b = 10;

@@ -6,7 +6,7 @@
 // Variable Name: A unique identifier following Java naming rules.
 // Value: The actual data assigned to the variable.
 
-public class variables {
+public class a3_variables {
     public static void main(String[] args)
     {
         int var = 10;

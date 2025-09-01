@@ -1,5 +1,5 @@
 // 1. Local Variable: The scope of local variables exists only within the block in which they are declared.
-public class varTypes {
+public class a4_varTypes {
     public static void main(String[] args)
     {
         int var = 10;   // Declared a Local Variable
