@@ -12,6 +12,18 @@ public class a10_TypeCasting {
         // Implicit casting (widening conversion)
         int a = 5;
         double b = a;  // int -> double (automatic)
-        System.out.print(b);
+        System.out.println(b);
+        
+        // Explicit casting
+        double c=14.5;
+        int d=(int)c;
+        System.out.print(d);
+        
+        // Boolean can't be converted into char or vice versa
+        // boolean e=true;
+        // char f=e;
+
+        // char g=false;
+        // boolean h=g;
     }
 }
