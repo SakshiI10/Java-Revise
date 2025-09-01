@@ -7,7 +7,7 @@
 // b. Explicit conversion, up casting: Converting a higher data type into a lower data type. It is done manually and data loss occurs.
 // NOTE: double->float->long->int->char->short->byte
 
-public class a10_TypeCasting {
+public class a6_TypeCasting {
     public static void main(String[] args) {
         // Implicit casting (widening conversion)
         int a = 5;
