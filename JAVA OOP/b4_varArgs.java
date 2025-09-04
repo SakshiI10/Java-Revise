@@ -1,7 +1,7 @@
 // Varargs lets a method to take many values or even no value at all. Java will treat these values like a list, so that we can use them inside the method easily.
 // varargs = input from inside your code (your own method calls).
 
-public class a9_varArgs {
+public class b4_varArgs {
     static void fun2(String s, int... a) {
         System.out.println("String: " + s);
         System.out.println("Number of arguments is: " + a.length);

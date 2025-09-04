@@ -5,7 +5,7 @@
 //     //body
 // }
 
-public class a6_methods {
+public class b1_methods {
     // Method to print message
     public void printMessage() {
         System.out.println("Hello!");
@@ -14,7 +14,7 @@ public class a6_methods {
     public static void main(String[] args) {
       
         // Create an instance of the Method class
-        a6_methods obj = new a6_methods();
+        b1_methods obj = new b1_methods();
         
         // Calling the method
         obj.printMessage(); 
