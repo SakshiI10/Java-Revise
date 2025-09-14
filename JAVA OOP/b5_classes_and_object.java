@@ -2,7 +2,7 @@
 // There can be only one public class, and the name of the class should be same as the file name.
 
 // Method 2: By creating another class:
-class Person{
+class Person{                                   // Another method in the file that is not public.
     String name;
     int age;
     void input (String n, int a){
@@ -15,12 +15,12 @@ class Person{
     }
 }
 
-public class b5_classes_and_object {
+public class b5_classes_and_object {            // The one and only public class in the file (main class).
     // Method 1: directly inside the class:
     // String name;
     // int age;
 
-    public static void main(String[] args){
+    public static void main(String[] args){     // main method
         // b5_classes_and_object obj=new b5_classes_and_object();
         // obj.name="Sakshi";
         // obj.age=23;
