@@ -1,6 +1,6 @@
-// Java Methods are blocks of code that perform a specific task. A method allows us to reuse code, improving both efficiency and organization. All methods in Java must belong to a class. Methods are similar to functions and expose the behavior of objects.
+// Java Methods are blocks of code that perform a specific task. Methods are similar to functions and expose the behavior of objects. It must be declared within a class.
 
-// <access_modifier> <return_type> <method_name>( list_of_parameters)
+// <access_modifier> <static: keyword> <return_type> <method_name> ( list_of_parameters)
 // {
 //     //body
 // }
@@ -11,6 +11,10 @@ public class b1_methods {
         System.out.println("Hello!");
     }
 
+    static int sum(int a, int b){
+        return a+b;
+    }
+
     public static void main(String[] args) {
       
         // Create an instance of the Method class
@@ -18,5 +22,6 @@ public class b1_methods {
         
         // Calling the method
         obj.printMessage(); 
+        System.out.println(sum(4, 4));
     }
 }
