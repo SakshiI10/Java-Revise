@@ -6,22 +6,24 @@
 // }
 
 public class b1_methods {
-    // Method to print message
+    // Instance method belongs to the instance of the class and need to create an object off the class to call the method.
     public void printMessage() {
         System.out.println("Hello!");
     }
 
+    // A static method belongs to the class and can be called without creating an object of the class.
     static int sum(int a, int b){
         return a+b;
     }
 
     public static void main(String[] args) {
-      
         // Create an instance of the Method class
         b1_methods obj = new b1_methods();
         
         // Calling the method
         obj.printMessage(); 
+
+        // Call a method without creating object
         System.out.println(sum(4, 4));
     }
 }

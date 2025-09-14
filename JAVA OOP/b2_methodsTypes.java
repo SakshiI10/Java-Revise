@@ -15,23 +15,23 @@ public class b2_methodsTypes {
         System.out.println("Number: " + number);
     }
 
-    // 2. Static Methods
-    // a. Belong to the class, not instances.
-    // b. Can be called without creating an object.
+// 2. Static Methods
+// a. Belong to the class, not instances.
+// b. Can be called without creating an object.
     public static void show() {
         System.out.println("This is a static method");
     }
 
-    // 4. Final Methods:
-    // a. Declared with the final keyword.
-    // b. Cannot be overridden by subclasses.
+// 4. Final Methods:
+// a. Declared with the final keyword.
+// b. Cannot be overridden by subclasses.
     public final void finalMethod() {
         System.out.println("This is a final method and cannot be overridden");
     }
 
-    // 5. Constructor Methods:
-    // a. Special methods called when an object is created.
-    // b. Have the same name as the class and no return type.
+// 5. Constructor Methods:
+// a. Special methods called when an object is created.
+// b. Have the same name as the class and no return type.
     public b2_methodsTypes() {
         System.out.println("Constructor called");
     }
@@ -70,4 +70,3 @@ class Dog extends Animal {
         System.out.println("Bark");
     }
 }
-
