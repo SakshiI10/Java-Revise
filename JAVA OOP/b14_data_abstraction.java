@@ -7,7 +7,7 @@ abstract class Person{
     }
 }
 
-// You must have to define the abstract method in the child class compulsorily so as to call the method.
+// You must define all the abstract method in the child class compulsorily so as to call the method.
 class Student extends Person{
     Student(){
         super();                        // To call the constructor of the abstract class you must call the super().
