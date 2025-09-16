@@ -1,0 +1,18 @@
+1. JDBC: Java Database Connectivity, It's a Java API to connect and execute the query with the database.
+
+2. Steps:
+a. Import Required Package
+i. import java.sql.*;
+
+b. Load Driver
+i. com.mysql.cj.jdbc.Driver
+
+c. Create a Connection
+
+d. Create a Statement
+
+e. Execute Queries
+i. executeQuery(sql) method: Used for SQL SELECT query.
+ii. executeUpdate(sql) method: This method is for SQL CREATE TABLE, DROP TABLE (DDL) and INSERT, UPDATE or DELETE (DML).
+
+f. Close Connection

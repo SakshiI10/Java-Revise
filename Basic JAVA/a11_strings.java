@@ -23,7 +23,7 @@ public class a11_strings {
 
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter your name: ");
-        String name=sc.next();  // For one word
+        // String name=sc.next();  // For one word
         String name=sc.nextLine();  // For more than one word
         System.out.println("Entered Name: "+name);
     }
