@@ -1,0 +1,32 @@
+// 1. Import required package
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // 2. Load driver from Project structure->+->Java->select the connector stored in D drive
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 3. Creating connection
+            String url="jdbc:mysql://127.0.0.1:3306/sys";
+            String userName="root";
+            String password="root123";
+            Connection conn=DriverManager.getConnection(url, userName, password);
+
+            // 4. Create statement
+            Statement stmt=conn.createStatement();
+
+            // 5. Execute query
+            //String query="INSERT INTO PERSONS VALUES(4, 'DACK')";
+            String query="DELETE FROM PERSONS WHERE SRNO=5";
+            //String query="UPDATE PERSONS SET SRNO=5, NAME='ERA' WHERE SRNO=4";
+            stmt.executeUpdate(query);
+
+            // 6. Close connection
+            conn.close();
+            System.out.println("Data inserted successfully");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
