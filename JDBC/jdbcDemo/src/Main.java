@@ -1,11 +1,14 @@
 import java.sql.*;
+import java.util.Scanner;
 
 public class Main {
     private static final String url="jdbc:mysql://127.0.0.1:3306/sys";
     private static final String userName="root";
     private static final String password="root123";
 
+
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         try {
             // 2. Load driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -15,12 +18,21 @@ public class Main {
 
             // 4. Create statement
             PreparedStatement ps = conn.prepareStatement("INSERT INTO Persons VALUES (?, ?)");
-            //PreparedStatement ps = conn.prepareStatement("DELETE FROM Persons WHERE SRNO = ? AND name = ?")
+            //PreparedStatement ps = conn.prepareStatement("DELETE FROM Persons WHERE SRNO = ?");
 
             // 5. Execute query
-            ps.setInt(1, 5);
-            ps.setString(2, "Eva");
-            ps.executeUpdate();
+            System.out.println("How many students do you want to add?");
+            int n=sc.nextInt();
+
+            for (int i=1; i<=n; i++) {
+                System.out.println("Enter the id of "+i+" student");
+                int srno=sc.nextInt();
+                System.out.println("Enter your name of "+i+" student");
+                String name=sc.next();
+                ps.setInt(1, srno);
+                ps.setString(2, name);
+                ps.executeUpdate();
+            }
 
             // 6. Close connection
             conn.close();
