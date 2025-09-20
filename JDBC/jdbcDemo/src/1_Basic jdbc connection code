@@ -17,8 +17,8 @@ public class Main {
             Statement stmt=conn.createStatement();
 
             // 5. Execute query
-            //String query="INSERT INTO PERSONS VALUES(4, 'DACK')";
-            String query="DELETE FROM PERSONS WHERE SRNO=5";
+            String query="INSERT INTO PERSONS VALUES(4, 'DACK')";
+            //String query="DELETE FROM PERSONS WHERE SRNO=5";
             //String query="UPDATE PERSONS SET SRNO=5, NAME='ERA' WHERE SRNO=4";
             stmt.executeUpdate(query);
 
