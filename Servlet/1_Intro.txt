@@ -1,0 +1,50 @@
+JAVA SERVLET:
+a. A Java Servlet is a server-side program written in Java that extends the capabilities of a web server. It is part of the Java EE (Jakarta EE) specification.
+
+b. Servlets are mainly used to create dynamic web applications.
+
+c. They run inside a Servlet Container (like Apache Tomcat, Jetty, GlassFish).
+
+d. Servlets can interact with databases, APIs, or business logic and help generate dynamic content such as HTML, JSON, or XML.
+
+
+WORKING OF A JAVA SERVLET:
+1. Client Request
+A client (usually a web browser) sends a request to the server (e.g., Tomcat) by accessing a URL mapped (Whenever someone visits this URL, run this Java Servlet) to a servlet (The @WebServlet("/hello") annotation is the URL mapping).
+
+
+Flow Diagram:
+Browser URL: http://localhost:8080/myapp/hello
+           ↕
+Mapped to: HelloServlet.class (compiled class in /WEB-INF/classes/)
+
+
+e.g., Code:
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.getWriter().println("Hello, Servlet!");
+    }
+}
+
+
+2. Web Server Passes Request to Servlet Container:
+The web server hands over the request to the Servlet Container (the environment inside the server that manages servlets).
+
+
+3. Request Handling (service()):
+For each client request, the service() method is called.
+If it’s a GET request → doGet() is executed.
+If it’s a POST request → doPost() is executed.
+Destruction (destroy()) → Called once before servlet is removed from memory.
+
+
+4. Processing:
+The servlet processes the request:
+Reads request parameters (form data, query strings, cookies, etc.)
+Interacts with databases, APIs, or business logic
+Prepares a response (HTML, JSON, XML, file, etc.)
+
+5. Response Sent Back
+The servlet writes the response using a PrintWriter or ServletOutputStream.
+The server sends this response back to the client (e.g., the web browser displays HTML).
