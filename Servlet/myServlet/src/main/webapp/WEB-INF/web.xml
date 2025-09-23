@@ -14,4 +14,14 @@
         <servlet-name>message</servlet-name>
         <url-pattern>/message</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>second</servlet-name>
+        <servlet-class>com.display.add</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>second</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
 </web-app>

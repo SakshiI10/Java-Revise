@@ -1,8 +1,11 @@
+// First basic code for reference
 package com.display;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class message extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res) 
-			throws IOException {
+			throws IOException, ServletException {
 		//String n=req.getParameter("name");
 		//PrintWriter out=res.getWriter();
 		//out.print("Hello "+n);
@@ -18,7 +21,8 @@ public class message extends HttpServlet {
 		int n1=Integer.parseInt(req.getParameter("num1"));
 		int n2=Integer.parseInt(req.getParameter("num2"));
 		int sum=n1+n2;
-		PrintWriter out=res.getWriter();
-		out.print(n1+" + "+n2+" = "+sum);;
+		
+		RequestDispatcher rd=req.getRequestDispatcher("add");
+		rd.forward(req, res);
 	}
 }
