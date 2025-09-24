@@ -5,11 +5,24 @@
 <title>myServlet Demo</title>
 </head>
 <body>
+	<!-- Quick rules of thumb:
+	a. Use Get: If you want to display the entered thing in the url.
+	method="get" → servlet must implement doGet()
+	
+	b. Use Post: if you don't want to display the entered thing in the url.
+	method="post" → servlet must implement doPost()
+
+	c. If you override service(), it will handle both (unless doGet/doPost override it). -->
+	
+	
+	<!-- 1. For diplaying Hello -->
 	<!-- <form action="message" method="Post">
 		Enter your name: <input type="text" name="name">
 		<input type="submit">
 	</form> -->
-	<form action="message" method="post">
+	
+	<!-- 2. For displaying addition of 2 numbers -->
+	<form action="message" method="Get">
         Enter First number: <input type="text" name="num1"><br>
         Enter Second number: <input type="text" name="num2"><br>
         <input type="submit">
