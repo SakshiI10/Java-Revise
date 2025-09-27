@@ -6,8 +6,9 @@ Eg:
 	Enter your name: <input type="text" name="name">
 	<input type="submit">
 </form> 
+NOTE: IT'S RETURNS A PAGE
 
-3. Map the Servlet in web.xml (if not using Annotations). Inside WEB-INF/web.xml, add:
+3. Map the Servlet to the URL in web.xml (if not using Annotations). Inside WEB-INF/web.xml, add:
 <servlet>
         <servlet-name>message</servlet-name>
         <servlet-class>com.display.message</servlet-class>
@@ -16,4 +17,9 @@ Eg:
         <servlet-name>message</servlet-name>
         <url-pattern>/message</url-pattern>
 </servlet-mapping>
+NOTE: IT'S RETURNS USER DATA NOT A PAGE
 
+
+4. Map the servlet to the URL in the class itself by using Annotations
+@WebServlet("/annotationsDemo")
+NOTE: IT'S RETURNS USER DATA NOT A PAGE
