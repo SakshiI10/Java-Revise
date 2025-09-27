@@ -1,0 +1,19 @@
+1. Tomcat only runs servlets, not JSP directly.
+a. Servlets are the core Java classes that handle HTTP requests.
+b. JSP files are converted into servlets by the server before execution.
+
+2. Servlets display data, not a page.
+a. A servlet can send plain text or HTML in response using PrintWriter.
+b. Since servlets don’t separate logic and presentation that's why JSP was introduced.
+
+3. JSP makes programming easier:
+a. No need to explicitly extend HttpServlet.
+b. No need to manually create PrintWriter, request, or response objects.
+c. Simplifies embedding Java code directly within HTML.
+
+4. JSP Scriptlets and Directives:
+Scriptlet: <% code %> → Java code inside the service method of the generated servlet.
+Declaration: <%! code %> → Declare methods or variables outside the service method.
+Page Directive: <%@ page import="java.util.*" %> → Import packages.
+Expression: <%= var_name %> → Output the value of a variable directly.
+Comment: <%-- comment text --%> → JSP comment.
