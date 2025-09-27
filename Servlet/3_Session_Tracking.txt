@@ -1,0 +1,5 @@
+There are 4 techniques used in Session Tracking:
+1. URL Rewriting
+2. Hidden Form Field
+3. Cookies
+4. HttpSession

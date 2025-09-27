@@ -1,0 +1,10 @@
+1. For new server in Eclipse select: No servers are available... in servers option below.
+
+2. Select Apache: 
+Tomcat v11.0 Server.
+Then new dialogue bx will be opened. Browse to the folder where apache tomcat-11.0.1 is present (select same folder inside the extracted one) otherwise it will show error.
+
+3. When both are compatible you'll get: "Specify the Tomcat installation directory and JRE for this runtime. The specified JRE controls the highest supported Java Facet version." on top. 
+Then select the same folder in Download and install and wait for the installation (right below).
+
+4. Once done click on finish. Run the server. Visit the localhost.
