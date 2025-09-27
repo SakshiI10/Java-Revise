@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myServlet Demo</title>
+</head>
+<body>
+	<!-- Quick rules of thumb:
+	a. Use Get: If you want to display the entered thing in the url.
+	method="get" → servlet must implement doGet()
+	
+	b. Use Post: if you don't want to display the entered thing in the url.
+	method="post" → servlet must implement doPost()
+
+	c. If you override service(), it will handle both (unless doGet/doPost override it). -->
+	
+	
+	<!-- 1. For diplaying Hello -->
+	<!-- <form action="message" method="Post">
+		Enter your name: <input type="text" name="name">
+		<input type="submit">
+	</form> -->
+	
+	<!-- 2. For displaying addition of 2 numbers -->
+	<!-- <form action="message" method="Get">
+        Enter First number: <input type="text" name="num1"><br>
+        Enter Second number: <input type="text" name="num2"><br>
+        <input type="submit"> -->
+      
+    <!-- 3. A cookie demo code [refer cookieDemo.java] -->
+    <!-- <form action="cookieDemo" method="Get">
+        Enter First Name: <input type="text" name="name"><br>
+        <input type="submit">     
+    </form> -->
+    
+    <!-- 4. Using annotations -->
+	<!-- <form action="annotationsDemo" method="Get">
+	    Enter first number: <input type="text" name="num1"><br>
+	    <input type="submit">
+	</form> -->
+
+	<!-- 5. JSP first page -->
+	<!-- <form action="firstJSP.jsp">
+	    Enter first number: <input type="text" name="num1"><br>
+	    <input type="submit">
+	</form> -->
+	
+	<!-- 6. Page redirect using JSP -->
+	<form action="Controller.jsp">
+		Which course do you want to select?
+		 
+		<h3>
+		<input type="radio" name="page" value="Java">
+		Java Course
+		</h3>
+		
+		<h3>
+		<input type="radio" name="page" value="Javascript">
+		Javascript Course
+		</h3>
+	    <input type="submit">
+	</form>
+	
+</body>
+</html>
