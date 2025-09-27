@@ -1,5 +1,30 @@
-There are 4 techniques used in Session Tracking:
+There are 4 techniques used in Session (Time interval) Tracking:
 1. URL Rewriting
 2. Hidden Form Field
 3. Cookies
 4. HttpSession
+
+
+Cookies
+1. HTTP is a stateless protocol, meaning it cannot remember users across multiple requests. To maintain state, session tracking mechanisms are used.
+
+2. Cookies are small pieces of user information stored on the client side (browser). They help in identifying the user during subsequent visits or requests.
+
+3. A cookie is a small amount of information created by a server (e.g., a servlet) and sent to the web browser. The browser stores it and automatically sends it back to the server with future requests, enabling the server to recognize the user.
+
+4. Use:
+a. First login:
+i. You enter your username and password.
+ii. The server verifies them.
+iii. If correct, the server creates a session ID (or token) and sends it to your browser inside a cookie.
+iv. Your browser saves this cookie.
+
+b. Next time you visit (or reload a page):
+i. The browser automatically sends the cookie back with the request.
+ii. The server reads the session ID from the cookie.
+iii. If the session ID is valid, the server recognizes you without asking for username and password again.
+iv. The server uses the session ID to recognize you and fetch your details from its database.
+
+5. Types of Cookies:
+i. Non-persistent (Session) Cookie – Stored only in the browser’s memory until the browser is closed. Deleted once the session ends.
+ii. Persistent Cookie – Stored on the client’s hard drive with an expiration date. Remains available even after the browser is closed until it expires or is manually deleted.
