@@ -1,0 +1,19 @@
+1. Create a class by right clicking on project->new->other->class->Enter package and Name of the class->Enter.
+
+2. Create an index.html file inside the webapp. Add a form that submits data to the servlet:
+Eg:
+<form action="message" method="Post">
+	Enter your name: <input type="text" name="name">
+	<input type="submit">
+</form> 
+
+3. Map the Servlet in web.xml (if not using Annotations). Inside WEB-INF/web.xml, add:
+<servlet>
+        <servlet-name>message</servlet-name>
+        <servlet-class>com.display.message</servlet-class>
+</servlet>
+<servlet-mapping>
+        <servlet-name>message</servlet-name>
+        <url-pattern>/message</url-pattern>
+</servlet-mapping>
+
