@@ -5,7 +5,7 @@ a. Import Required Package
 i. import java.sql.*;
 
 b. Load Driver
-i. com.mysql.cj.jdbc.Driver
+i. com.mysql.cj.jdbc.Driver [It is stored in D:\, name is: mysql-connector-j-9.4.0]
 
 c. Create a Connection
 
