@@ -1,9 +1,15 @@
 import java.sql.*;
 import java.util.Scanner;
 
-public class Main {
-    private static final String url="jdbc:mysql://127.0.0.1:3306/sys";
-    private static final String userName="root";
+// To run this file:
+// 1. cd "D:\My codes\Java\3_JDBC\jdbcDemo\src"
+// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _4userInput.java
+// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _4userInput
+
+public class _4userInput {
+    // 1. Database configuration
+    private static final String url="jdbc:mysql://127.0.0.1:3306/college";  
+    private static final String userName="root";                            
     private static final String password="root123";
 
     public static void main(String[] args) {
@@ -16,8 +22,8 @@ public class Main {
             Connection conn=DriverManager.getConnection(url, userName, password);
 
             // 4. Create statement
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO Persons VALUES (?, ?)");
-            //PreparedStatement ps = conn.prepareStatement("DELETE FROM Persons WHERE SRNO = ?");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENT VALUES (?, ?)");
+            //PreparedStatement ps = conn.prepareStatement("DELETE FROM Persons WHERE ID = ?");
 
             // 5. Execute query
             System.out.println("How many students do you want to add?");
@@ -25,10 +31,10 @@ public class Main {
 
             for (int i=1; i<=n; i++) {
                 System.out.println("Enter the id of "+i+" student");
-                int srno=sc.nextInt();
+                int id=sc.nextInt();
                 System.out.println("Enter your name of "+i+" student");
                 String name=sc.next();
-                ps.setInt(1, srno);
+                ps.setInt(1, id);
                 ps.setString(2, name);
                 ps.executeUpdate();
             }

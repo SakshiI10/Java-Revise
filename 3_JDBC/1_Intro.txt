@@ -23,9 +23,20 @@ ii. CREATE TABLE, DROP TABLE and ALERT TABLE (DDL).
 
 NOTE: When we are working with database try to use try and catch to avoid excception in the code.
 
+=================================================================================
+
 Q1. Why do we close res (ResultSet), ps(PreparedStatement) and conn(Connection)?
 1. Connection: When a Connection is opened, it creates a live communication link between the application and the database. The database can handle only a limited number of such connections at a time. If these connections are not closed, they remain occupied, which can eventually prevent new users or programs from connecting to the database.
 
 2. A PreparedStatement uses database memory to store and manage the SQL query that has been prepared. If it is not closed, the database continues to hold that memory unnecessarily, which can lead to reduced performance over time.
 
 3. A ResultSet holds the data returned by the database and often maintains a cursor or pointer on the database side. If it is not closed, the database assumes the data is still being used and continues to reserve resources for it, leading to inefficient resource usage.
+
+==================================================================================
+
+Q2. What if only connection is closed not ResultSet and PreparedStatement?
+When the Connection is closed, the database session ends. Because the PreparedStatement and ResultSet are dependent on that connection, they are also terminated. 
+But The cleanup of PreparedStatement and ResultSet becomes indirect and delayed.
+If something goes wrong before the connection is closed (like an exception), those resources may remain open longer than expected.
+
+==================================================================================
