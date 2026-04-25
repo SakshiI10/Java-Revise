@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 // To run this file:
 // 1. cd "D:\My codes\Java\3_JDBC\jdbcDemo\src"
-// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _4userInput.java
-// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _4userInput
+// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _3userInput.java
+// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _3userInput
 
-public class _4userInput {
+public class _3userInput {
     // 1. Database configuration
     private static final String url="jdbc:mysql://127.0.0.1:3306/college";  
     private static final String userName="root";                            
@@ -41,6 +41,7 @@ public class _4userInput {
 
             // 6. Close connection
             conn.close();
+            ps.close();
             System.out.println("Data inserted successfully");
         } catch (Exception e) {
             System.out.println(e.getMessage());

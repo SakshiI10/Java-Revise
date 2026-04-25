@@ -4,15 +4,14 @@
 // Instead of hard coding queries PreparedStatement object provides a feature to execute a parameterized query (SQL query is passed as a parameter).
 
 
-// 1. Import required package
 import java.sql.*;
 
 // To run this file:
 // 1. cd "D:\My codes\Java\3_JDBC\jdbcDemo\src"
-// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2executeQuery.java
-// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2executeQuery
+// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2preparedStatement.java
+// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2preparedStatement
 
-public class _2executeQuery {
+public class _2preparedStatement {
     // 1. Database configuration
     private static final String url="jdbc:mysql://127.0.0.1:3306/college";  
     private static final String userName="root";                            
@@ -23,30 +22,24 @@ public class _2executeQuery {
             // 2. Load driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // 3. Create connection
+            // 3. create connection 3
             Connection conn=DriverManager.getConnection(url, userName, password);
 
-            // 4. Create Prepare Statement
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM STUDENT");
+            // 4. Create statement
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENT VALUES (?, ?)");
+            // PreparedStatement ps = conn.prepareStatement("DELETE FROM STUDENT WHERE ID = ? AND NAME = ?");
 
             // 5. Execute query
-            ResultSet res=ps.executeQuery();
-            System.out.println("ID"+" "+"NAME");
-
-            while(res.next()){
-                int srno=res.getInt(1);
-                String name = res.getString("NAME"); 
-                System.out.println(srno+" "+ name);
-            }
+            ps.setInt(1, 3);
+            ps.setString(2, "SRK");
+            ps.executeUpdate();
 
             // 6. Close connection
-            res.close();   
-            ps.close();    
             conn.close();
+            ps.close();
+            System.out.println("Data inserted successfully");
         } catch (Exception e) {
-            e.printStackTrace(); 
+            System.out.println(e.getMessage());
         }
     }
 }
-
-
