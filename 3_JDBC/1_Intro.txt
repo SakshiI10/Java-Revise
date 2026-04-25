@@ -1,18 +1,31 @@
-1. JDBC: Java Database Connectivity, It's a Java API to connect and execute the query with the database.
+JDBC: Java Database Connectivity, It's a Java API to connect and execute the query with the database.
 
-2. Steps:
-a. Import Required Package
-i. import java.sql.*;
+Steps:
+1. Import Required Package
+a. import java.sql.*;
 
-b. Load Driver
-i. com.mysql.cj.jdbc.Driver [It is stored in D:\, name is: mysql-connector-j-9.4.0]
+2. Load Driver
+a. com.mysql.cj.jdbc.Driver [It is stored in D:\, name is: mysql-connector-j-9.4.0]
 
-c. Create a Connection
+3. Create a Connection
 
-d. Create a Statement
+4. Create a Statement
 
-e. Execute Queries
-i. executeQuery(sql) method: Used for SQL SELECT query.
-ii. executeUpdate(sql) method: This method is for SQL CREATE TABLE, DROP TABLE (DDL) and INSERT, UPDATE or DELETE (DML).
+5. Execute Queries
+These are of two types listed below:
+a. executeQuery(sql) method: Used for SQL SELECT query.
 
-f. Close Connection
+b. executeUpdate(sql) method: It is of 2 type:
+i. SQL INSERT, UPDATE or DELETE (DML), 
+ii. CREATE TABLE, DROP TABLE and ALERT TABLE (DDL).
+
+6. Close Connection
+
+NOTE: When we are working with database try to use try and catch to avoid excception in the code.
+
+Q1. Why do we close res (ResultSet), ps(PreparedStatement) and conn(Connection)?
+1. Connection: When a Connection is opened, it creates a live communication link between the application and the database. The database can handle only a limited number of such connections at a time. If these connections are not closed, they remain occupied, which can eventually prevent new users or programs from connecting to the database.
+
+2. A PreparedStatement uses database memory to store and manage the SQL query that has been prepared. If it is not closed, the database continues to hold that memory unnecessarily, which can lead to reduced performance over time.
+
+3. A ResultSet holds the data returned by the database and often maintains a cursor or pointer on the database side. If it is not closed, the database assumes the data is still being used and continues to reserve resources for it, leading to inefficient resource usage.

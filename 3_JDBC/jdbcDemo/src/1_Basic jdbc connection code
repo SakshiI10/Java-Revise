@@ -8,7 +8,7 @@ public class Main {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // 3. Creating connection
-            String url="jdbc:mysql://127.0.0.1:3306/sys";
+            String url="jdbc:mysql://127.0.0.1:3306/college";
             String userName="root";
             String password="root123";
             Connection conn=DriverManager.getConnection(url, userName, password);
