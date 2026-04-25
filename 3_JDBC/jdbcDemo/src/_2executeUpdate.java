@@ -1,7 +1,12 @@
 // 1. Import required package
 import java.sql.*;
 
-public class Main {
+// To run this file:
+// 1. cd "D:\My codes\Java\3_JDBC\jdbcDemo\src"
+// 2. javac -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2executeUpdate.java
+// 3. java -cp ".;..\lib\mysql-connector-j-9.7.0.jar" _2executeUpdate
+
+public class _2executeUpdate {
     public static void main(String[] args) {
         try {
             // 2. Load driver from Project structure->+->Java->select the connector stored in D drive
@@ -17,9 +22,9 @@ public class Main {
             Statement stmt=conn.createStatement();
 
             // 5. Execute query
-            String query="INSERT INTO PERSONS VALUES(4, 'DACK')";
-            //String query="DELETE FROM PERSONS WHERE SRNO=5";
-            //String query="UPDATE PERSONS SET SRNO=5, NAME='ERA' WHERE SRNO=4";
+            // String query="INSERT INTO STUDENT VALUES(2, 'RK')";
+            // String query="DELETE FROM STUDENT WHERE ID=1";
+            String query="UPDATE STUDENT SET ID=2, NAME='RADHAKRUSHNA' WHERE ID=2";
             stmt.executeUpdate(query);
 
             // 6. Close connection
