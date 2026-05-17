@@ -25,12 +25,24 @@ NOTE: When we are working with database try to use try and catch to avoid exccep
 
 =================================================================================
 
-Q1. Why do we close res (ResultSet), ps(PreparedStatement) and conn(Connection)?
+Q1.  Why do we create a statement object?
+We create a Statement (or PreparedStatement) because the Connection object only establishes the link between Java and the database.
+To actually send SQL commands to the database, we need a statement object.
+
+==================================================================================
+
+Q2. What is the difference between Statement and Preparedstatement?
+Statement executes normal SQL directly.
+PreparedStatement executes precompiled SQL with placeholders (?).
+
+==================================================================================
+
+Q3. Why do we close res (ResultSet), ps(PreparedStatement) and conn(Connection)?
 1. Connection: When a Connection is opened, it creates a live communication link between the application and the database. The database can handle only a limited number of such connections at a time. If these connections are not closed, they remain occupied, which can eventually prevent new users or programs from connecting to the database.
 
 2. A PreparedStatement uses database memory to store and manage the SQL query that has been prepared. If it is not closed, the database continues to hold that memory unnecessarily, which can lead to reduced performance over time.
 
-3. A ResultSet holds the data returned by the database and often maintains a cursor or pointer on the database side. If it is not closed, the database assumes the data is still being used and continues to reserve resources for it, leading to inefficient resource usage.
+3. A ResultSet holds the data returned by the database and often maintains a pointer on the database side. If it is not closed, the database assumes the data is still being used and continues to reserve resources for it, leading to inefficient resource usage.
 
 ==================================================================================
 
@@ -40,3 +52,4 @@ But The cleanup of PreparedStatement and ResultSet becomes indirect and delayed.
 If something goes wrong before the connection is closed (like an exception), those resources may remain open longer than expected.
 
 ==================================================================================
+

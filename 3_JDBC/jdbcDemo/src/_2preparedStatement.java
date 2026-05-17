@@ -1,9 +1,3 @@
-// Q3. What are PreparedStatement?
-// A PreparedStatement is a pre-compiled SQL statement. 
-// It is a subinterface of Statement. Prepared Statement objects have some useful additional features than Statement Objects.
-// Instead of hard coding queries PreparedStatement object provides a feature to execute a parameterized query (SQL query is passed as a parameter).
-
-
 import java.sql.*;
 
 // To run this file:
@@ -22,7 +16,7 @@ public class _2preparedStatement {
             // 2. Load driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // 3. create connection 3
+            // 3. create connection
             Connection conn=DriverManager.getConnection(url, userName, password);
 
             // 4. Create statement

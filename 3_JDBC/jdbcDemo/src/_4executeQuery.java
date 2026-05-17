@@ -1,4 +1,3 @@
-// 1. Import required package
 import java.sql.*;
 
 // To run this file:

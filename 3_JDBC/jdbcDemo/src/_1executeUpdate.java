@@ -13,7 +13,7 @@ public class _1executeUpdate {
     private static final String password="root123";
     public static void main(String[] args) {
         try {
-            // 2. Load driver from Project structure->+->Java->select the connector stored in D drive
+            // 2. Load driver from Project structure->Java->select the connector stored in D drive
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // 3. Creating connection
