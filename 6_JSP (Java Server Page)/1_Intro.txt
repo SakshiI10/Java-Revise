@@ -1,3 +1,4 @@
+
 1. Tomcat only runs servlets, not JSP directly.
 a. Servlets are the core Java classes that handle HTTP requests.
 b. JSP files are converted into servlets by the server before execution.
