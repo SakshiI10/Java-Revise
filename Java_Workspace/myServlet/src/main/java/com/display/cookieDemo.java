@@ -37,5 +37,4 @@ public class cookieDemo extends HttpServlet{
 			out.print("Welcome "+s1);
 		}
 	}
-
 }
