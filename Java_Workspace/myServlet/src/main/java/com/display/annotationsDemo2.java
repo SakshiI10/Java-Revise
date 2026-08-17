@@ -12,13 +12,14 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/annotationsDemo2")
 public class annotationsDemo2 extends HttpServlet{
-	public void service(HttpServletRequest req, HttpServletResponse res) 
-			throws IOException, ServletException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		HttpSession session=req.getSession();
 		int num1=(int)session.getAttribute("x");
 		int sq=num1*num1;
 		
 		PrintWriter out=res.getWriter();
+//		out.print("<html><body bgcolor='blue'>");
 		out.print("Square of the number = "+sq);
+//		out.print("</body></html>");
 	}
 }

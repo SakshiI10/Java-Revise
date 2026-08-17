@@ -18,3 +18,8 @@ Declaration: <%! code %> → Declare methods or variables outside the service me
 Page Directive: <%@ page import="java.util.*" %> → Import packages.
 Expression: <%= var_name %> → Output the value of a variable directly.
 Comment: <%-- comment text --%> → JSP comment.
+
+5. JSP → Servlet Conversion
+A server such as Tomcat does not directly execute the JSP source code. The JSP container first translates the JSP into Servlet source code, then compiles it into a Servlet class, and finally executes that Servlet which is executed by the server.
+The flow is:
+JSP → Servlet Source Code → Compilation → Servlet Class → Execution

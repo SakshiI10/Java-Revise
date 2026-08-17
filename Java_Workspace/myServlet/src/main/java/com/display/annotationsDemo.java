@@ -12,8 +12,7 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/annotationsDemo")
 public class annotationsDemo extends HttpServlet{
-		public void service(HttpServletRequest req, HttpServletResponse res) 
-				throws IOException, ServletException {
+		public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 			int n1=Integer.parseInt(req.getParameter("num1"));
 			HttpSession session=req.getSession();
 			session.setAttribute("x", n1);
