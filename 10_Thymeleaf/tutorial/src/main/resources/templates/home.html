@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+	<h1>Thymeleaf Tutorial</h1>
+
+	<!-- for-each Loop -->
+	<!-- <h2>List of Numbers</h2>
+	<h3 th:each="number : ${listOfNumbers}">
+		<span th:text="${number}"></span>
+	</h3> -->
+	
+	<!-- For Loop -->
+	<h2>Multiplication Table</h2>
+	<table border="1">
+    <tr>
+        <th>Expression</th>
+        <th>Result</th>
+    </tr>
+
+    <tr th:each="item, indexStart : ${table}">
+        <td th:text="${number + ' x ' + (indexStart.index + 1)}"></td>
+        <td th:text="${item}"></td>
+    </tr>
+</table>
+	
+</html>
