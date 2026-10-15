@@ -47,8 +47,8 @@ public class HelloController {
 		return list;
 	}
 	
-	@PostMapping("/add")
-	public void add(@RequestBody Employee employee) {
-		list.add(employee);
-	}
+//	@PostMapping("/add")
+//	public void add(@RequestBody Employee employee) {
+//		list.add(employee);
+//	}
 }
