@@ -17,15 +17,22 @@ import jakarta.servlet.http.HttpServletRequest;
 public class HelloController {
 	
 	@GetMapping("/")
+	public String index() {
+	    return "Welcome to Spring Security!";
+	}
+	
+	@GetMapping("/home")
 	public String hello() {
 		return "Learning Spring security";
 	}
 
+//	Getting session ID
 	@GetMapping("/id")
 	public String session(HttpServletRequest req) {
 		return "Session ID " + req.getSession().getId();
 	}
 	
+//	Getting CSRF Token
 	@GetMapping("/csrf")
 	public CsrfToken session2(HttpServletRequest req) {
 		return (CsrfToken) req.getAttribute("_csrf");
