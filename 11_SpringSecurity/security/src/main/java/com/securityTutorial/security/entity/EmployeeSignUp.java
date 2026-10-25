@@ -1,16 +1,24 @@
 package com.securityTutorial.security.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "EMPLOYEESIGNUP")
+
 public class EmployeeSignUp {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name = "userName")
 	private String userName;
+	
+	@Column(name = "password")
 	private String password;
 	
 	public int getId() {

@@ -26,18 +26,18 @@ public class SecurityConfig {
 //      http
 //          .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
 
-//      http
-//          .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-//          .httpBasic(Customizer.withDefaults())
-//          .formLogin(Customizer.withDefaults());
+      http
+          .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+          .httpBasic(Customizer.withDefaults())
+          .formLogin(Customizer.withDefaults());
 
-        http
-            .authenticationProvider(daoAuthenticationProvider())
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/home", "/signup").permitAll()
-                .anyRequest().authenticated())
-            .formLogin(Customizer.withDefaults())
-            .csrf(csrf -> csrf.disable());
+//        http
+//            .authenticationProvider(daoAuthenticationProvider())
+//            .authorizeHttpRequests(auth -> auth
+//                .requestMatchers("/", "/home", "/signup").permitAll()
+//                .anyRequest().authenticated())
+//            .formLogin(Customizer.withDefaults());
+////            .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
@@ -62,6 +62,7 @@ public class SecurityConfig {
 //      return new InMemoryUserDetailsManager(user1, user2);
 //  }
 
+//    Why is above code commented out? Because I want to retrieve registered users from MySQL instead.
     @Bean
     public UserDetailsService userDetailsService() {
         return new CustomUserDetailsService();
@@ -73,6 +74,9 @@ public class SecurityConfig {
         DaoAuthenticationProvider authProvider =
                 new DaoAuthenticationProvider(userDetailsService());
 
+//        It compares passwords as plain text. For example, if the database contains maker123, the submitted password must match maker123.
+//
+//        This is only for learning; for a real application, use a password-hashing encoder such as BCryptPasswordEncoder.
         authProvider.setPasswordEncoder(
                 NoOpPasswordEncoder.getInstance());
 

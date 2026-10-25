@@ -22,12 +22,14 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String userName)
 	        throws UsernameNotFoundException {
+		
+		System.out.println("Login attempted for: " + userName);
+		EmployeeSignUp emp = repo.findByUserName(userName);
 
-	    EmployeeSignUp emp = repo.findByUserName(userName);
-
-	    if (emp == null) {
-	        throw new UsernameNotFoundException("User Not Found: " + userName);
-	    }
+		if (emp == null) {
+		    System.out.println("USER NOT FOUND");
+		    throw new UsernameNotFoundException("User not found: " + userName);
+		}
 
 	    System.out.println("Username from DB: " + emp.getUserName());
 	    System.out.println("Password from DB: " + emp.getPassword());
