@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -37,7 +38,9 @@ public class SecurityConfig {
 //                .requestMatchers("/", "/home", "/signup").permitAll()
 //                .anyRequest().authenticated())
 //            .formLogin(Customizer.withDefaults());
-////            .csrf(csrf -> csrf.disable());
+      
+//      Never do this
+//            .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
@@ -75,11 +78,11 @@ public class SecurityConfig {
                 new DaoAuthenticationProvider(userDetailsService());
 
 //        It compares passwords as plain text. For example, if the database contains maker123, the submitted password must match maker123.
-//
+        
 //        This is only for learning; for a real application, use a password-hashing encoder such as BCryptPasswordEncoder.
-        authProvider.setPasswordEncoder(
-                NoOpPasswordEncoder.getInstance());
-
+//        authProvider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+        
+        authProvider.setPasswordEncoder(new BCryptPasswordEncoder(12));
         return authProvider;
     }
 }
