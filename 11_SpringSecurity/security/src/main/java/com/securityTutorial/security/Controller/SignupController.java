@@ -15,8 +15,7 @@ public class SignupController {
     @Autowired
     private SignupRepo repo;
 
-    private final BCryptPasswordEncoder encoder =
-            new BCryptPasswordEncoder(12);
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     @PostMapping("/signup")
     public String signup(@RequestBody EmployeeSignUp employee) {
